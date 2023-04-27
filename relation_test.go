@@ -3,7 +3,7 @@
  * @file_name relation_test.go
  */
 
-package main
+package LogicalOperatorGo
 
 import (
 	"log"

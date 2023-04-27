@@ -3,7 +3,7 @@
  * @file_name test_tree.go
  */
 
-package main
+package LogicalOperatorGo
 
 import (
 	"bytes"

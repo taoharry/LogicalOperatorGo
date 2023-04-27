@@ -3,7 +3,7 @@
  * @file_name map_tree.go
  */
 
-package main
+package LogicalOperatorGo
 
 type TraversalTree struct {
 	NowId    string           `json:"NowId"`

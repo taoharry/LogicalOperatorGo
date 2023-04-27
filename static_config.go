@@ -3,7 +3,7 @@
  * @file_name static.go
  */
 
-package main
+package LogicalOperatorGo
 
 import "fmt"
 

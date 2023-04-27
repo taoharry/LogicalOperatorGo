@@ -3,7 +3,7 @@
  * @file_name utils.go
  */
 
-package main
+package LogicalOperatorGo
 
 func RemoveKong(strs []string) []string {
 	result := []string{}

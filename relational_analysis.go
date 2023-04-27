@@ -3,7 +3,7 @@
  * @file_name relational_analysis.go
  */
 
-package main
+package LogicalOperatorGo
 
 import (
 	"bytes"
