@@ -96,6 +96,12 @@ func FlagParser(rule string, dept int, priority []string, record map[int]string)
 
 	record[dept] = rule
 
+	// fix 修正单规则无逻辑处理关系
+	if results == nil && len(priority) == 0 {
+		priority = append(priority, rule)
+		return priority, record
+	}
+
 	if len(results) == 1 {
 		priority = append(priority, rule)
 		return priority, record
@@ -158,6 +164,8 @@ func ParserRule(rule string, dept int, priority []string, record map[int]string)
 	return priority, record
 }
 
+// 识别括号优先级
+
 // 拆分与, 或, 非和有限级逻辑
 func RelationalAnalysis(rule string) (priority []string, record map[int]string, keyRules []string, err error) {
 	err = nil
@@ -168,7 +176,7 @@ func RelationalAnalysis(rule string) (priority []string, record map[int]string, 
 	return
 }
 
-// 规则组合结构, 标准化为 rule1 && rule2
+// FormatRules 规则组合结构, 标准化为 rule1 && rule2
 func FormatRules(rule string) (string, []string) {
 	var (
 		keyRules = []string{}
