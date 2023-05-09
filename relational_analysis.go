@@ -144,7 +144,8 @@ func FlagParser(rule string, dept int, priority []string, record map[int]string)
 
 func ParserRule(rule string, dept int, priority []string, record map[int]string) ([]string, map[int]string) {
 	record[dept] = rule
-	complex := fmt.Sprintf(`\([\&\|\!\=\+\*a-z0-9\ ]*?\)`)
+	//complex := fmt.Sprintf(`\([\u4e00-\u9fa5\&\|\!\=\+\*a-zA-Z0-9\ ]*?\)`)
+	complex := fmt.Sprintf(`\([一-龥\&\|\!\=\+\*a-zA-Z0-9\ ]*?\)`)
 	find := regexp.MustCompile(complex)
 	results := find.FindAllString(rule, -1)
 	//logging.Printf("运行第", dept, "层 result = ", results)
